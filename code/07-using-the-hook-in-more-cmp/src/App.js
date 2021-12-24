@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 
 import Tasks from './components/Tasks/Tasks';
 import NewTask from './components/NewTask/NewTask';
-import useHttp from './hooks/use-http';
+import useHttpMock from './hooks/use-http-mock';
 
 function App() {
   const [tasks, setTasks] = useState([]);
 
-  const { isLoading, error, sendRequest: fetchTasks } = useHttp();
+  const { isLoading, error, sendRequest: fetchTasks } = useHttpMock();
 
   useEffect(() => {
     const transformTasks = (tasksObj) => {
